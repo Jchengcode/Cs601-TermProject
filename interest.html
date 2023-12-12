@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interest</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="interest.html">Favorite Foods</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skill.html">Skill</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="sushiApp">
+    <article>
+        <article>
+            <h2>Sushi: A Culinary Art Form</h2>
+            <p>Sushi isn't just a delicious meal; it's an art form that requires precision, patience, and skill. The blend of rice, fish, and a myriad of possible ingredients results in a diverse range of flavors and textures, creating a culinary adventure for both the chef and the diner.</p>
+            <p><i>This exploration of sushi was inspired by my personal culinary journey.</i></p>
+            <p>From selecting the freshest ingredients to the subtle art of rice preparation, sushi-making is steeped in tradition and innovation alike. It's not merely about the food, but the experience and the aesthetic pleasure it brings.</p>
+            <p>For those interested in learning how to create this delicacy at home, a beginner's guide can be the perfect place to start. Discover the fundamentals of sushi with this insightful guide:</p>
+            <a href="https://atastykitchen.com/how-to-make-sushi/">How to Make Sushi: A Beginner's Guide</a>
+        </article>
+
+        <table>
+            <caption>Types of Sushi and Their Flavors</caption>
+            <thead>
+            <tr>
+                <th>Type of Sushi</th>
+                <th>Main Ingredient</th>
+                <th>Flavor Profile</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="sushi in sushiTypes" :key='sushi.type'>
+                <td>
+                    <img
+
+                            :src='sushi.images[sushi.currentImage]'
+                            :alt='sushi.type'
+                            @mouseenter='nextImage(sushi)'
+                            class='sushi-image'
+                    >
+                    {{ sushi.type }}
+                </td>
+                <td>{{ sushi.ingredient }}</td>
+                <td>{{ sushi.flavor }}</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </article>
+
+    <section>
+        <h2>Enjoy a Cooking Show Clip</h2>
+        <p>Check out this quick clip from one of my favorite cooking shows demonstrating how to prepare sushi!</p>
+        <video controls width="512" height="512">
+            <source src="./assets/How%20to%20make%20Simple%20Sushi%20at%20home%20%20%20step-by-step%20SUSHI%20recipe.mp4" type="video/mp4">
+        </video>
+    </section>
+
+</main>
+<footer>
+    &copy; 2023 JackyC.
+</footer>
+<script src="Sushi.js"></script>
+<script src="music.js"></script>
+</body>
+</html>
